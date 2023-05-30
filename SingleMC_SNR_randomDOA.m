@@ -204,19 +204,19 @@ for isnr = 6 %1:length(SNRs)
 
 %% Gaussian
         loss_param = inf;
-        [gammaInd81,report81] = SBL_v5p11(sensingMatrix, Y, 'SBL-G', loss_param, options, errorDOApeak, errorDOAsepP);
+        [gammaInd81,report81] = SBL_v5p12(sensingMatrix, Y, 'SBL-G', loss_param, options, errorDOApeak, errorDOAsepP);
 
 %% MVT
         loss_param = 2.1;
-        [gammaInd82,report82] = SBL_v5p11(sensingMatrix, Y, 'SBL-T', loss_param, options, errorDOApeak, errorDOAsepP);
+        [gammaInd82,report82] = SBL_v5p12(sensingMatrix, Y, 'SBL-T', loss_param, options, errorDOApeak, errorDOAsepP);
 
 %% Huber
         loss_param = 0.9;
-        [gammaInd83,report83] = SBL_v5p11(sensingMatrix, Y, 'SBL-H', loss_param, options, errorDOApeak, errorDOAsepP);
+        [gammaInd83,report83] = SBL_v5p12(sensingMatrix, Y, 'SBL-H', loss_param, options, errorDOApeak, errorDOAsepP);
 
 %% Tyler's
         loss_param = Nsensor;
-        [gammaInd84,report84] = SBL_v5p11(sensingMatrix, Y, 'SBL-Tyl', loss_param, options, errorDOApeak, errorDOAsepP);
+        [gammaInd84,report84] = SBL_v5p12(sensingMatrix, Y, 'SBL-Tyl', loss_param, options, errorDOApeak, errorDOAsepP);
 
 
 %% Results
@@ -233,34 +233,34 @@ for isnr = 6 %1:length(SNRs)
 
         DoA_error = errorDOAcutoff(phi_vec(gammaInd81),DOA_src,errCut);
         disp(['RMSE Gaussian-loss models (-G) : ',num2str(sqrt(mean(power(DoA_error,2))))])
-        if exist('outputsSBLv5p11G','var')==0, outputsSBLv5p11G = []; end
-        outputSBLv5p11G = struct('theta',phi_vec(gammaInd81),'error',DoA_error,'itr',report81.results.iteration_L1);
-        outputsSBLv5p11G = [outputsSBLv5p11G; outputSBLv5p11G];
+        if exist('outputsSBLv5p12G','var')==0, outputsSBLv5p12G = []; end
+        outputSBLv5p12G = struct('theta',phi_vec(gammaInd81),'error',DoA_error,'itr',report81.results.iteration_L1);
+        outputsSBLv5p12G = [outputsSBLv5p12G; outputSBLv5p12G];
 
 
         DoA_error = errorDOAcutoff(phi_vec(gammaInd82),DOA_src,errCut);
         disp(['RMSE MVT-loss models (-T)      : ',num2str(sqrt(mean(power(DoA_error,2))))])
-        if exist('outputsSBLv5p11T','var')==0, outputsSBLv5p11T = []; end
-        outputSBLv5p11T = struct('theta',phi_vec(gammaInd82),'error',DoA_error,'itr',report82.results.iteration_L1);
-        outputsSBLv5p11T = [outputsSBLv5p11T; outputSBLv5p11T];
+        if exist('outputsSBLv5p12T','var')==0, outputsSBLv5p12T = []; end
+        outputSBLv5p12T = struct('theta',phi_vec(gammaInd82),'error',DoA_error,'itr',report82.results.iteration_L1);
+        outputsSBLv5p12T = [outputsSBLv5p12T; outputSBLv5p12T];
 
 
         DoA_error = errorDOAcutoff(phi_vec(gammaInd83),DOA_src,errCut);
         disp(['RMSE Huber-loss models (-H)    : ',num2str(sqrt(mean(power(DoA_error,2))))])
-        if exist('outputsSBLv5p11H','var')==0, outputsSBLv5p11H = []; end
-        outputSBLv5p11H = struct('theta',phi_vec(gammaInd83),'error',DoA_error,'itr',report83.results.iteration_L1);
-        outputsSBLv5p11H = [outputsSBLv5p11H; outputSBLv5p11H];
+        if exist('outputsSBLv5p12H','var')==0, outputsSBLv5p12H = []; end
+        outputSBLv5p12H = struct('theta',phi_vec(gammaInd83),'error',DoA_error,'itr',report83.results.iteration_L1);
+        outputsSBLv5p12H = [outputsSBLv5p12H; outputSBLv5p12H];
 
 
         DoA_error = errorDOAcutoff(phi_vec(gammaInd84),DOA_src,errCut);
         disp(['RMSE Tyler-loss models (-Tyl)  : ',num2str(sqrt(mean(power(DoA_error,2))))])
-        if exist('outputsSBLv5p11Tyl','var')==0, outputsSBLv5p11Tyl = []; end
-        outputSBLv5p11Tyl = struct('theta',phi_vec(gammaInd84),'error',DoA_error,'itr',report84.results.iteration_L1);
-        outputsSBLv5p11Tyl = [outputsSBLv5p11Tyl; outputSBLv5p11Tyl];
+        if exist('outputsSBLv5p12Tyl','var')==0, outputsSBLv5p12Tyl = []; end
+        outputSBLv5p12Tyl = struct('theta',phi_vec(gammaInd84),'error',DoA_error,'itr',report84.results.iteration_L1);
+        outputsSBLv5p12Tyl = [outputsSBLv5p12Tyl; outputSBLv5p12Tyl];
         
     end % end of the for-loop
 %     saveCharVar = who('outputs*');
-%     saveChar = ['save([ ''p11rand_'', model(1), ''mode_'', ''s'', num2str(Number_of_DOAs), ''MC'' , num2str(NmonteCarlo) , ''SNRn'' , num2str(isnr) ], ''SNRs'' , ''NmonteCarlo'' '];
+%     saveChar = ['save([ ''p12rand_'', model(1), ''mode_'', ''s'', num2str(Number_of_DOAs), ''MC'' , num2str(NmonteCarlo) , ''SNRn'' , num2str(isnr) ], ''SNRs'' , ''NmonteCarlo'' '];
 %     for ichar = 1:numel(saveCharVar)
 %         saveChar = [saveChar,',''',char(saveCharVar{ichar}),''''];
 %     end
@@ -268,7 +268,7 @@ for isnr = 6 %1:length(SNRs)
 %     eval(saveChar)
 % 
 %     if isnr > 1
-%         delete( [ 'p11rand_', model(1), 'mode_', 's', num2str(Number_of_DOAs), 'MC' , num2str(NmonteCarlo) , 'SNRn' , num2str(isnr-1), '.mat' ] )
+%         delete( [ 'p12rand_', model(1), 'mode_', 's', num2str(Number_of_DOAs), 'MC' , num2str(NmonteCarlo) , 'SNRn' , num2str(isnr-1), '.mat' ] )
 %     end
 
 end % end of for isnr=1:length(sigma_vec) loop
