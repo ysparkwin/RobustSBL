@@ -12,7 +12,8 @@ The codes provide:
 
 # Citation
 
--**[C. F. Mecklenbräuker, P. Gerstoft, E. Ollila, and Y. Park, “Robust and Sparse M-Estimation of DOA,” (2023).](https://arxiv.org/abs/2301.06213)**  
+
+-**[C. F. Mecklenbräuker, P. Gerstoft, E. Ollila, and Y. Park, “Robust and Sparse M-Estimation of DOA,” Signal Process. 220 (2024), 109461, pp. 1-10. (ISSN 0165-1684. doi:10.1016/j.sigpro.2024.109461, Available online Mar. 7, 2024.)](https://doi.org/10.1016/j.sigpro.2024.109461)**  
 -[C. F. Mecklenbräuker, P. Gerstoft, and E. Ollila, “DOA M-estimation using sparse bayesian learning,” in Proc. IEEE ICASSP (2022), pp. 4933–4937.](https://ieeexplore.ieee.org/abstract/document/9746740)  
 
 A numerically efficient SBL implementation is available. [[CODE]](https://github.com/gerstoft/SBL)  
@@ -20,7 +21,7 @@ A numerically efficient SBL implementation is available. [[CODE]](https://github
 
 # Updates
 
-Version 1.0: (02/01/2023 by Y. Park)
+Version 1.0: (03/13/2024 by Y. Park)
 
 # Contact
 
