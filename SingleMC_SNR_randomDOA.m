@@ -1,3 +1,22 @@
+% Version 5.12: (03/13/2024)
+% written by Yongsung Park
+
+% Yongsung Park & Peter Gerstoft
+% MPL/SIO/UCSD
+% yongsungpark@ucsd.edu / gerstoft@ucsd.edu
+% noiselab.ucsd.edu
+
+% Citation
+% C. F. Mecklenbräuker, P. Gerstoft, E. Ollila, and Y. Park, “Robust and Sparse M-Estimation of DOA,” Signal Process. 220, 109461 (2024).
+% https://doi.org/10.1016/j.sigpro.2024.109461
+% C. F. Mecklenbräuker, P. Gerstoft, and E. Ollila, “DOA M-estimation using sparse bayesian learning,” in Proc. IEEE ICASSP (2022), pp. 4933–4937.
+% https://doi.org/10.1109/ICASSP43922.2022.9746740
+
+% Sparse Bayesian learning is available.
+% P. Gerstoft, C. F. Mecklenbräuker, A. Xenaki, and S. Nannuru, “Multi-snapshot sparse Bayesian learning for DOA,” IEEE Signal Process. Lett. 23(10) (2016).
+% https://doi.org/10.1109/LSP.2016.2598550
+
+%%
 clear; clc;
 close all;
 
